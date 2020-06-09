@@ -4,7 +4,7 @@ author: "LI KONG"
 date: "6/9/2020"
 output:
   word_document:
-    reference_docx: Kong_template.docx
+    # reference_docx: Kong_template.docx
   html_document:
     df_print: paged
 ---
