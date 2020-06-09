@@ -1,0 +1,153 @@
+---
+title: "Question2"
+author: "LI KONG"
+date: "6/9/2020"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+## Begin your markdown with an introduction explaining what is data visualization and its use.(3 marks)
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">What is data visualization? </span> -->
+### What is data visualization?    
+<span style="font-family:Times New Roman; font-size:12px;">__Data visualization__ is the graphical representation of information and data. By using visual elements like charts, graphs, and maps, data visualization tools provide an accessible way to see and understand trends, outliers, and patterns in data.</span>
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">The advantages and benefits of good data visualization</span> -->
+### The advantages and benefits of good data visualization     
+<span style="font-family:Times New Roman; font-size:12px;">Our culture is visual, including everything from art and advertisements to TV and movies.Data visualization is another form of visual art that grabs our interest and keeps our eyes on the message. When we see a chart, we quickly see trends and outliers. If we can see something, we internalize it quickly.</span>     
+<span style="font-family:Times New Roman; font-size:12px;">Effective data visualization is a delicate balancing act between form and function. The plainest graph could be too boring to catch any notice or it make tell a powerful point; the most stunning visualization could utterly fail at conveying the right message or it could speak volumes. The data and the visuals need to work together, and there’s an art to combining great analysis with great storytelling.</span>
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">Why data visualization is important? </span> -->
+### Why data visualization is important?   
+<span style="font-family:Times New Roman; font-size:12px;">It’s hard to think of a professional industry that doesn’t benefit from making data more understandable. Every STEM field benefits from understanding data—and so do fields in government, finance, marketing, history, consumer goods, service industries, education, sports, and so on.</span>   
+<span style="font-family:Times New Roman; font-size:12px;">According to the World Economic Forum, the world generates 25,000 megabytes of data every day, and 90% of the data is currently generated in the past two years. With so much data, management and understanding become more difficult. It is impossible for anyone to browse the data line by line to understand different patterns and draw observations. Data growth can be managed as part of the data science process, and data visualization is part of the process.</span>
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">5 Types of Big Data Visualization Categories </span>  -->
+### 5 Types of Big Data Visualization Categories     
+<span style="font-family:Times New Roman; font-size:12px;">__Temporal__: Data visualizations belong in the temporal category if they satisfy two conditions: that they are linear, and that they are one-dimensional. Temporal visualizations normally feature lines that either stand alone or overlap with each other, with a start and finish time.</span>         
+
+* Examples of temporal data visualization include: 
+    + Scatter plots
+    + Polar area diagrams
+    + Time series sequences
+    + Timelines
+    + Line graphs
+
+<span style="font-family:Times New Roman; font-size:12px;">__Hierarchical__: Data visualizations that belong in the hierarchical category are those that order groups within larger groups. Hierarchical visualizations are best suited if you’re looking to display clusters of information, especially if they flow from a single origin point.</span>    
+
+* Examples of hierarchical data visualizations include:
+    + Tree diagrams
+    + Ring charts
+    + Sunburst diagrams
+
+<span style="font-family:Times New Roman; font-size:12px;">__Network__: Datasets connect deeply with other datasets. Network data visualizations show how they relate to one another within a network. In other words, demonstrating relationships between datasets without wordy explanations.</span>         
+
+* Examples of network data visualizations include:
+    + Matrix charts
+    + Node-link diagrams
+    + Word clouds
+    + Alluvial diagrams
+
+<span style="font-family:Times New Roman; font-size:12px;">__Multidimensional__: Just like the name, multidimensional data visualizations have multiple dimensions. This means that there are always 2 or more variables in the mix to create a 3D data visualization. Because of the many concurrent layers and datasets, these types of visualizations tend to be the most vibrant or eye-catching visuals. Another plus? These visuals can break down a ton of data down to key takeaways.</span>       
+
+* Examples of multidimensional data visualizations include:
+    + Scatter plots
+    + Pie charts
+    + Venn diagrams
+    + Stacked bar graphs
+    + Histograms
+
+<span style="font-family:Times New Roman; font-size:12px;">__Geospatial__: Geospatial or spatial data visualizations relate to real life physical locations, overlaying familiar maps with different data points. These types of data visualizations are commonly used to display sales or acquisitions over time, and can be most recognizable for their use in political campaigns or to display market penetration in multinational corporations.</span>          
+
+* Examples of geospatial data visualizations include:
+    + Flow map
+    + Density map
+    + Cartogram
+    + Heat map
+ 
+## Use the same dataset for all graphs. Provide some explanation regarding the dataset.(3 marks)
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">Diamonds</span> -->
+### Diamonds
+<span style="font-family:Times New Roman; font-size:12px;">Analyze diamonds by their cut, color, clarity, price, and other attributes.</span>    
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">Context</span> -->
+### Context
+<span style="font-family:Times New Roman; font-size:12px;">This classic dataset contains the prices and other attributes of almost 54,000 diamonds. It's a great dataset for beginners learning to work with data analysis and visualization.</span>  
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">Content</span> -->
+### Content
+<span style="font-family:Times New Roman; font-size:12px;">carat: weight of the diamond (0.2--5.01)    
+cut: quality of the cut (Fair, Good, Very Good, Premium, Ideal)    
+color: diamond colour, from J (worst) to D (best)      
+clarity: a measurement of how clear the diamond is (I1 (worst), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (best))     
+depth: total depth percentage = z / mean(x, y) = 2 * z / (x + y) (43--79)    
+table: width of top of diamond relative to widest point (43--95)    
+price: price in US dollars (\$326--\$18,823)  
+x: length in mm (0--10.74)      
+y: width in mm (0--58.9)      
+z: depth in mm (0--31.8) </span>
+
+<span style="font-family:Times New Roman; font-size:12px;"> We can answer how many observations (53,940), how many variables (only 10), and how many of those variables are ordered factor (only 3).</span>  
+```{r}
+library(ggplot2)
+data(diamonds)
+summary(diamonds)
+dim(diamonds)
+```
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">bar</span> -->
+### bar
+<span style="font-family:Times New Roman; font-size:12px;"> __Explain usage__: The method of visualizing the distribution of variables depends on whether the variables are categorical or continuous. If the value is only in a small set, then this variable is a categorical variable. Categorical variables are usually saved as factors or character vectors in R. To check the distribution of categorical variables, you can use a __bar__ chart.</span>    
+<span style="font-family:Times New Roman; font-size:12px;"> __Note__: The height of the bar indicates the number of observations in each x value.</span>  
+```{r}
+ggplot(data = diamonds) +
+geom_bar(mapping = aes(x = cut))
+```
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">histogram</span> -->
+### histogram
+<span style="font-family:Times New Roman; font-size:12px;"> __Explain usage__: If it can be arbitrarily valued in an infinite ordered set, then this variable is a continuous variable. Numeric and date-time variables are two examples of continuous variables. To check the distribution of continuous variables, you can use a __histogram__.</span>     
+<span style="font-family:Times New Roman; font-size:12px;"> __Note__: The histogram performs equal-width binning on the x-axis, and then uses the height of the bar to represent the number of observations that fall into each binning. In the figure below, the highest bar indicates that almost 30 000 observations have carat values between 0.25 and 0.75, which are the left and right values of the bar, respectively.</span>  
+```{r}
+ggplot(data = diamonds) +
+geom_histogram(mapping = aes(x = carat), binwidth = 0.5)
+```
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">boxplot</span> -->
+### boxplot
+<span style="font-family:Times New Roman; font-size:12px;"> __Explain usage__: One way to display the distribution of continuous variables by grouping of categorical variables is to use __box plots__. Box plots are a simple visual representation of the distribution of variable values. Such plots are very popular among statisticians. Each box plot includes the following content.     
+• For a rectangular box, the lower side represents the 25th percentile of the distribution, and the upper side represents the 75th percentile of the distribution. The distance between the upper and lower sides is called the interquartile range. There is a horizontal line in the middle of the box, indicating the median of the distribution, which is the 50th percentile of the distribution. These three lines can indicate the dispersion of the distribution, and can also help us to clarify whether the data is symmetric about the median or is biased to a certain side.          
+• The dots indicate observations that fall outside the upper and lower sides of the box by 1.5 times the interquartile range. These outliers are outliers, so they need to be plotted separately.         
+• The straight lines (or whiskers) extending from the top and bottom of the box can reach the farthest non-outlier points in the distribution.</span>  
+<span style="font-family:Times New Roman; font-size:12px;"> __Note__: We can find counterintuitive phenomena from the box plot: the average price of better quality diamonds is lower!</span>  
+```{r}
+ggplot(data = diamonds) +
+geom_boxplot(
+mapping = aes(
+x = reorder(cut, price, FUN = median),
+y = price
+)
+) +
+coord_flip()
+```
+
+<!-- <span style="color:black; font-family:Times New Roman; font-size:14px;">scatterplot</span> -->
+### scatterplot
+<span style="font-family:Times New Roman; font-size:12px;"> __Explain usage__: For the visual representation of the relative change between two continuous variables, we have introduced a very good method: use __geom_point()__ to draw a __scatterplot__. You can think of related changes as a pattern of points.</span>   
+<span style="font-family:Times New Roman; font-size:12px;">  __Note__: As the size of the data set continues to increase, the usefulness of the scatter plot becomes smaller and smaller, because the data points begin to appear drawn and pile up in a black area. We have already introduced a way to solve this problem, which is to add transparency using the alpha graphics attribute. you can see that there is an exponential relationship between the carat number and value of diamonds:</span>   
+```{r}
+ggplot(data = diamonds) +
+geom_point(
+mapping = aes(x = carat, y = price),
+alpha = 1 / 100
+)s
+```
+
+
+__This project supports both html and word browsing methods. It has been submitted to  [github]([https://github.com/LK3024629/data_visualization) with permission "private". After the exam, the project will be published on June 11. If other privacy is involved, please contact me to delete the github project immediately.__
+
+ 
